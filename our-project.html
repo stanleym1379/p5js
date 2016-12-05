@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Red Rollover</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+  <script>
+    var x = 100;
+    var y = 400;
+    var w = 60;
+    var h = 60;
+    var r = 0
+    var g = 0
+    var b = 0
+
+    function setup() {
+      background(255);
+      createCanvas(600, 600);
+      noStroke();
+    }
+
+    function draw() {
+      //Red button
+      fill(255, 0, 0);
+      rect(x, y, w, h);
+      //Green button
+      fill(0, 255, 0);
+      rect(x + 100, y, w, h);
+      //Blue button
+      fill(0, 0, 255);
+      rect(x + 200, y, w, h);
+      //Clear button
+      fill(100, 100, 100);
+      rect(x + 300, y, w, h)
+
+      
+    }
+
+    function mouseDragged(){
+      //Brush 
+      fill(r, g, b) 
+      ellipse(mouseX, mouseY, 20, 20)
+      
+      //Red Paint   
+      if (mouseX > x && mouseX < 160 && mouseY < 460 && mouseY > 400) {
+        r = 255
+        g = 0
+        b = 0
+      }
+      // Blue Paint 
+      if (mouseX > x + 100 && mouseX < 260 && mouseY < 460 && mouseY > 400) {
+        g = 255
+        r = 0
+        b = 0
+      }
+      // Green Paint 
+      if (mouseX > x + 200 && mouseX < 360 && mouseY < 460 && mouseY > 400) {
+        b = 255
+        r = 0
+        g = 0
+      }
+
+         //Fresh Canvase 
+        if (mouseX > x + 300 && mouseX < 460 && mouseY < 460 && mouseY > 400) {
+           clear();
+           
+        }
+
+      }
+ 
+  </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/josiahe2793/p5js/blob/gh-pages/our-project.html?footer=0"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+</html>
